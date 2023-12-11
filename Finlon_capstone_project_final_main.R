@@ -309,7 +309,7 @@ get_xwoba_batters = function(batters,pitchers){
         current.data = pitchers[[j]][k,] %>%
           select(-c("pitch_type","player_name","pitcher"))
         
-        xwoba_list[[names(batters)[[i]]]][[names(pitchers)[[j]]]][[k]] = exp(predict(batters[[i]],current.data))
+        xwoba_list[[names(batters)[[i]]]][[names(pitchers)[[j]]]][[k]] = predict(batters[[i]],current.data)
       }
     }
   }
